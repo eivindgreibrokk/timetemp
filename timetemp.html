@@ -5,55 +5,8 @@
 	<script type="text/javascript" src="https://zoomcharts.com/templates/js/jsonp.js"></script>
 	<h1>Gangdalsåsen</h1>
 	<div id="timetemp"></div>
-	<div id="demo"></div>
 
 	<script type="text/javascript" charset="utf-8">
-var t = new TimeChart(
-        {
-            container: document.getElementById("demo"),
-            data:
-            {
-                units:["h"],
-                url: "https://zoomcharts.com/dvsl/data/time-chart/temperature-kuldiga-h.json"
-            },
-            valueAxis:{
-                "default":{
-                    title:"Temperature"
-                }
-            },
-            series:[
-                {
-                    name:"Max temperature",
-                    id:"maxTemp",
-                    type:"line",
-                    data:{
-                        index:1,
-                        aggregation:"max"
-                    },
-                    style:{
-                        smoothing: true,
-                        lineColor:"red",
-                        lineWidth: 3
-                    }
-                },
-                {
-                    name:"Min temperature",
-                    id:"minTemp",
-                    type:"line",
-                    data:{
-                        index:1,
-                        aggregation:"min"
-                    },
-                    style:{
-                        smoothing: true,
-                        lineColor:"blue",
-                        lineWidth: 3
-                    }
-                }
-            ]
-        }
-);
-
 var settings = {
     data: {
         dataFunction: function (from, to, step, success, fail) {
