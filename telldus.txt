@@ -1,0 +1,18 @@
+Installing telldus-core on Raspberry Pi:
+https://lassesunix.wordpress.com/2013/08/12/installing-telldus-core-on-raspberry-pi/
+
+crontab:
+*/10 * * * * echo "Cron run $(date)" >> /var/www/telldus/cronrun.txt
+*/10 * * * * tdtool --list-sensors | grep "id=152" >> /var/www/telldus/sensors_bedroom.txt
+*/10 * * * * tdtool --list-sensors | grep "id=153" >> /var/www/telldus/sensors_entrance_outside.txt
+
+NetHomeServer:
+http://opennethome.org/download/
+http://192.168.1.141:8020/home
+
+Installing Tellstick Linux Drivers:
+http://wiki.nethome.nu/doku.php/installtellstickdriverlinux?s[]=tellstick
+
+Apache, Telldus data:
+http://192.168.1.141/telldus/sensors_entrance_outside.txt
+http://192.168.1.141/telldus/sensors_bedroom.txt
