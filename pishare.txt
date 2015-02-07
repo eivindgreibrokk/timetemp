@@ -6,4 +6,5 @@
 # Mount share on Raspberry PI
 root@raspberrypi:~# mkdir -p /mnt/pishare
 root@raspberrypi:~# chmod 777 /mnt/pishare
-root@raspberrypi:~# mount 192.168.1.111:/volume1/pishare /mnt/pishare
+Testing: root@raspberrypi:~# mount 192.168.1.111:/volume1/pishare /mnt/pishare
+Permanent: Entry in /etc/fstab: 192.168.1.111:/volume1/pishare	/mnt/pishare	nfs	defaults	0	0
