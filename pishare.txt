@@ -1,5 +1,9 @@
 # Create share on Synology NAS
 1. Control Panel > Shared Folder > Create
-2. Use 192.168.1.0/24 for hostname og IP in the section "NFS rule"
+2. NFS Permissions > NFS rule: Set Hostname or IP* to "192.168.1.0/24"
+3. NFS Permissions > NFS rule: Set Squash to "Map all users to admin"
 
 # Mount share on Raspberry PI
+root@raspberrypi:~# mkdir -p /mnt/pishare
+root@raspberrypi:~# chmod 777 /mnt/pishare
+root@raspberrypi:~# mount 192.168.1.111:/volume1/pishare /mnt/pishare
