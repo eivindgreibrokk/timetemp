@@ -8,3 +8,7 @@ root@raspberrypi:~# mkdir -p /mnt/pishare
 root@raspberrypi:~# chmod 777 /mnt/pishare
 Testing: root@raspberrypi:~# mount 192.168.1.111:/volume1/pishare /mnt/pishare
 Permanent: Entry in /etc/fstab: 192.168.1.111:/volume1/pishare	/mnt/pishare	nfs	defaults	0	0
+
+# Cron jobs
+*/10 * * * * tdtool --list-sensors | grep "id=152" >> /mnt/pishare/sensors/bedroom_$(date +"\%Y-\%m-\%d").txt
+*/10 * * * * tdtool --list-sensors | grep "id=153" >> /mnt/pishare/sensors/entrance_outside_$(date +"\%Y-\%m-\%d").txt
