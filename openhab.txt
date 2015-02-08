@@ -1,0 +1,4 @@
+OpenHAB on Raspberry Pi:	http://www.instructables.com/id/OpenHAB-on-Raspberry-Pi/
+RPI:	http://192.168.1.141:8080/
+Tellstick Binding:	https://github.com/openhab/openhab/wiki/Tellstick-Binding
+OpenHAB2:	https://github.com/openhab/openhab2/releases
