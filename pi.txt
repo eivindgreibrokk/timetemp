@@ -1,0 +1,9 @@
+# Update repos
+sudo apt-get update
+sudo apt-get upgrade
+
+# Update kernel and firmware
+sudo rpi-update
+
+# Clean up
+sudo apt-get clean
