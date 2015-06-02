@@ -2,9 +2,10 @@ Installing telldus-core on Raspberry Pi:
 https://lassesunix.wordpress.com/2013/08/12/installing-telldus-core-on-raspberry-pi/
 
 crontab:
-*/10 * * * * echo "Cron run $(date)" >> /var/www/telldus/cronrun.txt
-*/10 * * * * tdtool --list-sensors | grep "id=152" >> /var/www/telldus/sensors_bedroom.txt
-*/10 * * * * tdtool --list-sensors | grep "id=153" >> /var/www/telldus/sensors_entrance_outside.txt
+# Generate and transfer to ftp.domeneshop.no
+0-59/10 * * * * tdtool --list-sensors | grep "id=152" >> /home/pi/weather_log_files/bedroom_$(date +"\%Y-\%m-\%d").txt
+0-59/10 * * * * tdtool --list-sensors | grep "id=11" | grep "mandolyn" >> /home/pi/weather_log_files/entrance_outside_$(date +"\%Y-\%m-\%d").txt
+1-59/10 * * * * lftp -e "mirror --reverse --verbose /home/pi/weather_log_files /www/weather/; bye" "ftp://greibrokk@ftp.domeneshop.no"
 
 NetHomeServer:
 http://opennethome.org/download/
